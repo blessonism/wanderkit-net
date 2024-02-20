@@ -27,6 +27,7 @@
     "classnames": "^2.3.2",
     "contentlayer": "^0.3.4",
     "date-fns": "^2.30.0",
+    "encoding": "^0.1.13",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "ics": "^3.2.0",

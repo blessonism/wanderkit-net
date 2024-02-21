@@ -9,9 +9,9 @@ import Header from "./components/Header";
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Wanderkit - Unlock Your Perfect Trip",
+  title: "onism - Unlock Your Perfect Trip",
   description:
-    "Discover your ideal journey with Wanderkit! Our AI-powered itinerary generator crafts personalized travel plans based on your preferences, interests, and budget. Start exploring effortlessly today!",
+    "Discover your ideal journey with onism! Our AI-powered itinerary generator crafts personalized travel plans based on your preferences, interests, and budget. Start exploring effortlessly today!",
 };
 
 export default function RootLayout({

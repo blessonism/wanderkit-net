@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <header className="flex items-center w-full justify-between mb-12">
       <h2 className="font-bold text-xl">
-        <Link href="/">Wanderkit</Link>
+        <Link href="/">BTT</Link>
       </h2>
       <div className="sm:hidden">
         <MenuButton

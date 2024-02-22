@@ -81,7 +81,7 @@ export async function POST(req: Request) {
 
     // 返回错误响应
     return NextResponse.json(
-        { message: "something went wrong", ok: false },
+        { message: "something went wrong, Error calling OpenAI API with key ending in ${apiKeySuffix}", ok: false },
         { status: 500 }
     );
 }

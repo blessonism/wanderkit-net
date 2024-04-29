@@ -34,6 +34,40 @@ export default function Form(props: FormProps) {
         placeholder="Barcelona"
       />
       <p className="text-red-500">{errors.destination?.message}</p>
+
+      <label>How many people are going?</label>
+      <input
+        {...register("numPeople", { valueAsNumber: true })}
+        type="number"
+        className="border border-gray-400 p-2 rounded"
+        placeholder="2"
+        min="1" // This sets the minimum value that can be entered
+        step="1" // This restricts input to whole numbers only
+      />
+
+      <p className="text-red-500">{errors.numPeople?.message}</p>
+
+      <label>First time visiting?</label>
+      <select
+        {...register("firstTimeVisiting", {
+          setValueAs: (v) => v === "true", // Converts the string 'true' to boolean true
+        })}
+        className="border border-gray-400 p-2 rounded"
+      >
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+      <p className="text-red-500">{errors.firstTimeVisiting?.message}</p>
+
+      <label>How much do you plan to spend on this trip? (Optional)</label>
+      <input
+        {...register("plannedSpending", { valueAsNumber: true })}
+        type="number"
+        className="border border-gray-400 p-2 rounded"
+        placeholder="Amount in your currency"
+      />
+      <p className="text-red-500">{errors.plannedSpending?.message}</p>
+
       <label>Describe the intention of your trip</label>
       <textarea
         {...register("description")}

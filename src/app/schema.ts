@@ -7,7 +7,14 @@ export const input = z
     destination: z.string().min(1, { message: "Please fill in a destination" }),
     description: z.string().min(1, { message: "Please fill in a description" }),
     startDate: z.string().min(1, { message: "Please fill in a startDate" }),
-    endDate: z.string().min(1, { message: "Please fill in a endDate" }),
+    endDate: z.string().min(1, { message: "Please fill in an endDate" }),
+    numPeople: z
+      .number()
+      .min(1, { message: "Please specify at least one person" }),
+    firstTimeVisiting: z.boolean(),
+    plannedSpending: z
+      .number()
+      .min(0, { message: "Budget must be a non-negative number" }),
   })
   .refine(({ endDate, startDate }) => new Date(endDate) > new Date(startDate), {
     message: "End date must be after start date",
@@ -45,6 +52,9 @@ export const createItineraries = z.object({
   description: z.string().min(1),
   startDate: z.string().min(1),
   endDate: z.string().min(1),
+  numPeople: z.number().min(1),
+  firstTimeVisiting: z.boolean(),
+  plannedSpending: z.number().optional(),
   days: z.array(
     z.object({
       date: z.string().min(1),
@@ -67,6 +77,9 @@ export const itineraries = z.object({
   description: z.string().min(1),
   startDate: z.string().min(1),
   endDate: z.string().min(1),
+  numPeople: z.number().min(1),
+  firstTimeVisiting: z.boolean(),
+  plannedSpending: z.number().optional(),
   days: z.array(
     z.object({
       date: z.string().min(1),
